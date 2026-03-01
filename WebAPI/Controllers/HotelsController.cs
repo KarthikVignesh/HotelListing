@@ -1,8 +1,6 @@
 ﻿using HotelListing.Data;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace HotelListing.Controllers
 {
     [Route("api/[controller]")]
@@ -48,7 +46,7 @@ namespace HotelListing.Controllers
         }
 
         // PUT api/<HotelsController>/5
-        [HttpPut("{id}")]
+        [HttpPut("{id}")] 
         public ActionResult Put(int id, [FromBody] Hotel updatedHotel)
         {
             var existingHotel = hotels.FirstOrDefault(h => h.Id == id);
