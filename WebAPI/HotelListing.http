@@ -1,0 +1,40 @@
+@HotelListing_HostAddress = http://localhost:5291/api
+
+GET {{HotelListing_HostAddress}}/hotels/
+
+###
+
+POST {{HotelListing_HostAddress}}/hotels/
+Content-Type: application/json
+{
+    "id": 3,
+    "name": "Hotel California",
+    "address": "42 Sunset Boulevard, Los Angeles, CA",
+    "rating": 4.7   
+}
+###
+
+@id=3
+GET {{HotelListing_HostAddress}}/hotels/{{id}}
+
+###
+
+PUT {{HotelListing_HostAddress}}/hotels/{{id}}
+Content-Type: application/json
+{
+    "id": 3,
+    "name": "Hotel California",
+    "address": "42 Sunset Boulevard, Los Angeles, CA",
+    "rating": 4.7
+}
+
+###
+
+DELETE {{HotelListing_HostAddress}}/hotels/{{id}}
+
+###
+
+
+
+
+
