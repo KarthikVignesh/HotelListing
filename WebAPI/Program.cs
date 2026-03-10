@@ -1,4 +1,7 @@
 
+using HotelListing.Data;
+using Microsoft.EntityFrameworkCore;    
+
 namespace HotelListing
 {
     public class Program
@@ -8,9 +11,10 @@ namespace HotelListing
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            var connectionstring = builder.Configuration.GetConnectionString("HotelListingDbConnectionString");
+            builder.Services.AddDbContext<HotelListingDbContext>(options => options.UseSqlServer(connectionstring));
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
