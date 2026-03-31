@@ -1,4 +1,4 @@
-@HotelListing_HostAddress = http://localhost:5291/api
+@HotelListing_HostAddress = http://localhost:5291
 
 GET {{HotelListing_HostAddress}}/hotels/
 
@@ -38,3 +38,36 @@ DELETE {{HotelListing_HostAddress}}/hotels/{{id}}
 
 
 
+@id=2
+GET {{HotelListing_HostAddress}}/api/countries
+
+###
+
+POST {{HotelListing_HostAddress}}/api/countries
+Content-Type: application/json
+
+{
+  "name": "Test Country",
+  "shortName": "TC"
+}
+
+###
+
+DELETE {{HotelListing_HostAddress}}/api/countries/{{id}}
+
+###
+
+GET {{HotelListing_HostAddress}}/api/countries/{{id}}
+
+###
+
+PUT {{HotelListing_HostAddress}}/api/countries/{{id}}
+Content-Type: application/json
+
+{
+    "countryId": 2,
+    "name": "Las Vegas",
+    "shortName": "LA"
+}
+
+###
